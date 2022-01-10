@@ -1,0 +1,44 @@
+{
+  "0": {
+    "id": "1",
+    "name": "Renault Magnum",
+    "driver": "",
+    "state": "base"
+  },
+  "1": {
+    "id": "2",
+    "name": "Volvo",
+    "driver": "",
+    "state": "base"
+  },
+  "2": {
+    "id": "3",
+    "name": "DAF XT",
+    "driver": "",
+    "state": "base"
+  },
+  "3": {
+    "id": "4",
+    "name": "Kamaz",
+    "driver": "",
+    "state": "base"
+  },
+  "4": {
+    "id": "5",
+    "name": "BelAz",
+    "driver": "",
+    "state": "base"
+  },
+  "5": {
+    "id": "6",
+    "name": "",
+    "driver": "",
+    "state": "base"
+  },
+  "6": {
+    "id": "7",
+    "name": "Kraz",
+    "driver": "",
+    "state": "base"
+  }
+}

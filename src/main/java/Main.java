@@ -121,7 +121,7 @@ public class Main {
                 displayDrivers(list2);
                 displayTrucks(list1);
             } catch (IndexOutOfBoundsException e) {
-                System.out.println(ANSI_RED + "Вы обратились к несуществуещему грузовику!\n" +
+                System.out.println(ANSI_RED + "Вы обратились к  несуществуещему грузовику!\n" +
                         "Общее количество грузовиков: " + list1.size());
             }
         }

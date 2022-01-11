@@ -1,4 +1,7 @@
+package methoder;
 
+import doa.AutoBase;
+import set.DriverSet;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,79 +27,75 @@ public class MethodImpl implements Methods {
 
 
         //если уже в пути
-        if(list1.get(id).getState().equals("ROUTE")){
-            System.out.println(ANSI_RED+"Мы не можем сменить водителя, потому что он уже в пути!"+ANSI_RESET);
+        if (list1.get(id).getState().equals("ROUTE")) {
+            System.out.println(ANSI_RED + "Мы не можем сменить водителя, потому что он уже в пути!" + ANSI_RESET);
         }
 
         //назначение нового водителя!
-        else if(list1.get(id).getDriver().equals(" ")){
-            for(int i = 0; i<list1.size(); i++){
-                if(list2.get(i).getBus().equals(" ")){
+        else if (list1.get(id).getDriver().equals(" ")) {
+            for (int i = 0; i < list1.size(); i++) {
+                if (list2.get(i).getBus().equals(" ")) {
                     list1.get(id).setDriver(list2.get(i).getName());
                     list2.get(i).setBus(list1.get(id).getName());
-                    System.out.println(ANSI_PURPLE+"Водитель успешно назначен!"+ANSI_RESET);
+                    System.out.println(ANSI_PURPLE + "Водитель успешно назначен!" + ANSI_RESET);
                     break;
                     //
                 }
             }
         }
         //замена драйвера, если он уже есть!
-        else if(!list1.get(id).getDriver().equals("")){
-            for(int i = 0; i<list1.size(); i++){
-                if(list1.get(id).getDriver().equals(list2.get(i).getName())){
+        else if (!list1.get(id).getDriver().equals("")) {
+            for (int i = 0; i < list1.size(); i++) {
+                if (list1.get(id).getDriver().equals(list2.get(i).getName())) {
                     list2.get(i).setBus("");
                     continue;
                 }
-                if(list2.get(i).getBus().equals("")){
+                if (list2.get(i).getBus().equals("")) {
                     list1.get(id).setDriver(list2.get(i).getName());
                     list2.get(i).setBus(list1.get(id).getName());
-                    System.out.println(ANSI_PURPLE+"Водитель успешно назначен!"+ANSI_RESET);
+                    System.out.println(ANSI_PURPLE + "Водитель успешно назначен!" + ANSI_RESET);
                     break;
                     //
 
                 }
             }
-        }
-        else if(list1.get(id).getState().equals("REPAIR")){
-            System.out.println(ANSI_RED+"Мы не можем назначить или изменить водителя!"+ANSI_RESET);
+        } else if (list1.get(id).getState().equals("REPAIR")) {
+            System.out.println(ANSI_RED + "Мы не можем назначить или изменить водителя!" + ANSI_RESET);
         }
     }
 
     @Override
     public void startDriving(List<AutoBase> list1, List<DriverSet> list2, int id) {
 
-        int k = random.nextInt(3-1)+1;
+        int k = random.nextInt(3 - 1) + 1;
         //если уже в пути!
-        if (list1.get(id).getState().equals("ROUTE")){
-            System.out.println(ANSI_RED+"Грузовик уже на дороге!"+ANSI_RESET);
+        if (list1.get(id).getState().equals("ROUTE")) {
+            System.out.println(ANSI_RED + "Грузовик уже на дороге!" + ANSI_RESET);
         }
         //если в ремонте и нужно изменить состояние!
-        else if(list1.get(id).getState().equals("REPAIR")&&!list1.get(id).getDriver().equals("")){
-            if(k==1){
+        else if (list1.get(id).getState().equals("REPAIR") && !list1.get(id).getDriver().equals("")) {
+            if (k == 1) {
                 list1.get(id).setState("ROUTE");
-                System.out.println(ANSI_PURPLE+"Отремонтировали и выехал на маршрут!"+ANSI_RESET);
-            }
-            else {
+                System.out.println(ANSI_PURPLE + "Отремонтировали и выехал на маршрут!" + ANSI_RESET);
+            } else {
                 list1.get(id).setState("BASE");
-                System.out.println(ANSI_PURPLE+"С ремонта выехал!"+ANSI_RESET);
+                System.out.println(ANSI_PURPLE + "С ремонта выехал!" + ANSI_RESET);
             }
-        }
-        else if(list1.get(id).getState().equals("REPAIR")&&list1.get(id).getDriver().equals("")){
-            if(k==2){
+        } else if (list1.get(id).getState().equals("REPAIR") && list1.get(id).getDriver().equals("")) {
+            if (k == 2) {
                 list1.get(id).setState("BASE");
-                System.out.println(ANSI_PURPLE+"С ремонта в базу приехал"+ANSI_RESET);
+                System.out.println(ANSI_PURPLE + "С ремонта в базу приехал" + ANSI_RESET);
 
             }
         }
         // нельзя ездить без водителя!
-        else if(list1.get(id).getState().equals("BASE")&&list1.get(id).getDriver().equals(""))
-        {
-            System.out.println(ANSI_RED+"Вы не можете начать движение без водителя!"+ANSI_RESET);
+        else if (list1.get(id).getState().equals("BASE") && list1.get(id).getDriver().equals("")) {
+            System.out.println(ANSI_RED + "Вы не можете начать движение без водителя!" + ANSI_RESET);
         }
         //вождение грузовика!
-        else if(!list1.get(id).getDriver().equals("")){
+        else if (!list1.get(id).getDriver().equals("")) {
             list1.get(id).setState("ROUTE");
-            System.out.println(ANSI_PURPLE+"Выехал из базы!"+ANSI_RESET);
+            System.out.println(ANSI_PURPLE + "Выехал из базы!" + ANSI_RESET);
         }
 
     }
@@ -114,14 +113,15 @@ public class MethodImpl implements Methods {
                 System.out.println(ANSI_PURPLE + "Из базы приехал на ремонт!" + ANSI_PURPLE);
             }
             //если уже в ремонте
-            case "REPAIR" -> System.out.println(ANSI_RED+"Этот грузовик уже в ремонте!"+ANSI_RESET);
+            case "REPAIR" -> System.out.println(ANSI_RED + "Этот грузовик уже в ремонте!" + ANSI_RESET);
         }
     }
 
-    public List<AutoBase> getList1(){
+    public List<AutoBase> getList1() {
         return list1;
     }
-    public List<DriverSet> getList2(){
+
+    public List<DriverSet> getList2() {
         return list2;
     }
 }

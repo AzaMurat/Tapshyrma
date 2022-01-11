@@ -1,3 +1,4 @@
+package doa;
 
 public class AutoBase {
     public static final String BASE = "BASE";
@@ -49,5 +50,3 @@ public class AutoBase {
                 ", state='" + state;
     }
 }
-
-

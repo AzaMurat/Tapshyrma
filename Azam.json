@@ -1,30 +1,30 @@
 {
   "0": {
-    "id": "driver-1",
+    "id" : "driver-1",
     "name": "Petr"
   },
   "1": {
-    "id": "driver-2",
+    "id" : "driver-2",
     "name": "Askar"
   },
   "2": {
-    "id": "driver-3",
+    "id" : "driver-3",
     "name": "Uson"
   },
   "3": {
-    "id": "driver-4",
+    "id" : "driver-4",
     "name": "Usman"
   },
   "4": {
-    "id": "driver-5",
+    "id" : "driver-5",
     "name": "Make"
   },
   "5": {
-    "id": "driver-6",
+    "id" : "driver-6",
     "name": "Maks"
   },
   "6": {
-    "id": "driver-7",
+    "id" : "driver-7",
     "name": "Uson"
   }
 }

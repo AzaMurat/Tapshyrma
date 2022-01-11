@@ -1,8 +1,10 @@
+package set;
+
 public class DriverSet {
-    private int id=0;
-    private String driverId="";
-    private String name="";
-    private String bus="";
+    private int id = 0;
+    private String driverId = "";
+    private String name = "";
+    private String bus = "";
 
     public int getId() {
         return id;

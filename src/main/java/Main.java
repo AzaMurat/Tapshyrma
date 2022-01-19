@@ -22,7 +22,7 @@ public class Main {
         List<AutoBase> list1 = new ArrayList<>();
         List<DriverSet> list2 = new ArrayList<>();
         //1-й этап
-        //заправка грузовиков
+        //заправка грузови ков
         try {
             String data1 = new String(Files.readAllBytes(Path.of("C:\\Users\\Notnik-\\IdeaProjects\\Tapshyrma\\Aza.json")));
             JSONObject json = new JSONObject(data1);
@@ -102,7 +102,7 @@ public class Main {
                 System.out.println("Driver           :" + list1.get(id).getDriver());
                 System.out.println("State            :" + list1.get(id).getState());
                 System.out.println(ANSI_PURPLE + "Нажмите 1, чтобы изменить или назначить нового водителя." + ANSI_RESET);
-                System.out.println(ANSI_PURPLE + "Нажмите 2, чтобы начать " + ANSI_RESET);
+                System.out.println(ANSI_PURPLE + "Нажмите 2, чтобы начать вождение " + ANSI_RESET);
                 System.out.println(ANSI_PURPLE + "Нажмите 3, чтобы начать ремонт" + ANSI_RESET);
                 System.out.println(ANSI_PURPLE + "Нажмите 4, если вы хотите остановить программу" + ANSI_RESET);
                 scanner.nextLine();
@@ -112,7 +112,7 @@ public class Main {
                 }
                 MethodImpl actions = new MethodImpl(list1, list2, id);
                 switch (choice) {
-                    case "1" -> actions.changeDriver(list1, list2, id);
+                    case "1" -> {actions.changeDriver(list1, list2, id);}
                     case "2" -> actions.startDriving(list1, list2, id);
                     case "3" -> actions.startRepair(list1, list2, id);
                 }

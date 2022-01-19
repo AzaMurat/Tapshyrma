@@ -1,9 +1,6 @@
 package doa;
 
 public class AutoBase {
-    public static final String BASE = "BASE";
-    public static final String ROUTE = "ROUTE";
-    public static final String REPAIR = "REPAIR";
     private int id;
     private String name;
     private String driver;
@@ -43,10 +40,10 @@ public class AutoBase {
 
     @Override
     public String toString() {
-        return "AutoPark{" +
-                "id=" + id +
-                ", name='" + name +
-                ", driver " + driver +
-                ", state='" + state;
+        return " AutoPark " +
+                " id " + id +
+                " name " + name +
+                " driver " + driver +
+                " state " + state;
     }
 }

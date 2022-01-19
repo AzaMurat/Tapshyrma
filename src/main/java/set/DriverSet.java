@@ -6,6 +6,9 @@ public class DriverSet {
     private String name = "";
     private String bus = "";
 
+    public DriverSet() {
+    }
+
     public int getId() {
         return id;
     }
